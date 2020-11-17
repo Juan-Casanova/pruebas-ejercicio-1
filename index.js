@@ -77,7 +77,24 @@ Output: arregloTweets -> [
 */
 
 const updateInteraction = (feed) => {
-
+    let cloneArray = JSON.parse(JSON.stringify(feed));
+    
+    cloneArray.forEach(tweet => {
+        if(tweet.interaction.comments>=1000)
+        {
+            tweet.interaction.comments = tweet.interaction.comments/1000 + " mil";
+        }
+        if(tweet.interaction.retweets>=1000)
+        {
+            tweet.interaction.retweets = tweet.interaction.retweets/1000 + " mil";
+        }
+        if(tweet.interaction.likes>=1000)
+        {
+            tweet.interaction.likes = tweet.interaction.likes/1000 + " mil";
+        }
+    })
+    console.log(cloneArray)
+    return cloneArray;
 }
 
 /*
