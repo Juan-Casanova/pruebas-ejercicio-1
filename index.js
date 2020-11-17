@@ -93,7 +93,6 @@ const updateInteraction = (feed) => {
             tweet.interaction.likes = tweet.interaction.likes/1000 + " mil";
         }
     })
-    console.log(cloneArray)
     return cloneArray;
 }
 
@@ -145,7 +144,13 @@ Output: feed -> [
     }]
 */
 const getTweetsGreaterThan = (feed, noComments) => {
+    let newArray = feed.filter(tweet => {
+        return tweet.interaction.comments > noComments
+    })
 
+    newArray = updateInteraction(newArray);
+
+    return newArray;
 }
 
 /*
@@ -196,7 +201,13 @@ Output: arregloTweets -> [
     }]
 */
 const getTweetsLessOrEqualsThan = (feed, noComments) => {
+    let newArray = feed.filter(tweet => {
+        return tweet.interaction.comments < noComments
+    })
 
+    newArray = updateInteraction(newArray);
+
+    return newArray;
 }
 
 /*
