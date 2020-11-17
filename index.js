@@ -18,7 +18,13 @@ Input: feed -> [{profile: "AJ + Español"},{ profile: "Elon Musk" }]
 Output: ["AJ + Español", "Elon Musk"]
 */
 
-const getProfiles = (feed) => {}
+const getProfiles = (feed) => {
+    let newArray = [];
+    feed.forEach(profile => {
+        newArray.push(profile.profile)
+    });
+    return newArray;
+}
 
 /*
 3. Crear una función para obtener el arreglo de tweets con todas sus propiedades pero se tendrá que agregar un '@' al inicio del valor para la propiedad username
