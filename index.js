@@ -8,7 +8,9 @@ const {feed} = require('./source');
 Input: feed -> [{propiedades...}, {propiedades...}]
 Output: 2
 */
-const countTweets = (feed) => {};
+const countTweets = (feed) => {
+    return feed.length;
+};
 
 /*
 2. Obtener un arreglo con todos los perfiles de usuarios que están en el arreglo de tweets
