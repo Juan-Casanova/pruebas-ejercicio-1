@@ -33,12 +33,11 @@ Output: [{username: "@ajplusespanol"}, {username: "@elonmusk"}]
 */
 
 const updateUsername = (feed) => {
-    const cloneArray = Json.parse(JSON.stringify(feed));
-    let newArray = [];
-    cloneArray.forEach(tweet =>{
-        newArray.push("@" + tweet.forEach)
+    const cloneArray = JSON.parse(JSON.stringify(feed));
+    cloneArray.forEach(tweet => {
+        tweet.username = `@${tweet.username}`;
     })
-    return newArray;
+    return cloneArray;
 }
 
 /*
