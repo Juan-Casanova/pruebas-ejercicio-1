@@ -254,7 +254,14 @@ const getTweetsLessOrEqualsThan = (feed, noComments) => {
 
 */
 const getTweetsGreaterThanInteraction = (feed, interaction, quantity) => {
+    
+    let newArray = feed.filter(tweet => {
+        return tweet.interaction[interaction]>quantity
+    })
 
+    newArray = updateInteraction (newArray)
+
+    return newArray;
 }
 
 
